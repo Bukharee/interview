@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <header class="header">
+        <div>
+          <h1>Posts</h1>
+          <p>Manage your posts</p>
+        </div>
+        <button id="addPostBtn">Add Post</button>
+      </header>
+
+      <div class="toolbar">
+        <input id="searchInput" type="search" placeholder="Search posts..." />
+      </div>
+
+      <p id="status"></p>
+      <section id="posts" class="posts"></section>
+
+      <nav class="pagination">
+        <button id="prevBtn">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextBtn">Next</button>
+      </nav>
+    </main>
+
+    <dialog id="postDialog">
+      <form id="postForm">
+        <h2 id="formHeading">Add Post</h2>
+
+        <label for="title">Title</label>
+        <input id="title" name="title" required />
+
+        <label for="body">Content</label>
+        <textarea id="body" name="body" required></textarea>
+
+        <label for="userId">User ID</label>
+        <input
+          id="userId"
+          name="userId"
+          type="number"
+          min="1"
+          max="10"
+          value="1"
+          required
+        />
+
+        <p id="formError"></p>
+
+        <div class="form-actions">
+          <button type="button" id="cancelBtn">Cancel</button>
+          <button type="submit" id="saveBtn">Save Post</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="detailDialog">
+      <div class="detail">
+        <button id="closeDetailBtn" class="close">×</button>
+        <p id="detailMeta"></p>
+        <h2 id="detailTitle"></h2>
+        <p id="detailBody"></p>
+      </div>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
